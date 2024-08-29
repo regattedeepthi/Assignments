@@ -10,7 +10,7 @@ char="e"
 for i in string:
     if i in char:
         count=count+1
-        print(count)
+print(count)
 
 
 #Python Program to check if two Strings are Anagram.
@@ -122,9 +122,39 @@ else:
   
    #Python program to delete vowels in a given string.
    string=input("enter a string ")
-   vowels="aeiouAEIOU"
-   for char in string:
+   vowels=['a','e','i','o','u','A','E','I','O','U']
+   for i in string:
       if char not in vowels:
-         str=str.replace(char,"")
-      print("string without vowels is ",str)   
+         str=str+i
+   print("string without vowels is ",str)   
+
+#Python program to count the Occurrence Of Vowels & Consonants in a String.
+vowel_count=0
+consonant_count=0
+variable=input("enter the string")
+vowels="a,e,i,o,u,A,E,I,O,U"
+
+for i in variable:
+   if i in vowels:
+      vowel_count+=1
+   else:
+      consonant_count+=1
+     
+print("count of vowels ",vowel_count)
+print("count of consonants ",consonant_count)
+
+
+#Python program to check given character is digit or not using isdigit() method.
+char=input("enter the character")
+result=print(char.isdigit())
+if result == True:
+   print("char is digit")
+
+#Python program to calculate sum of integers in string.
+s=input("enter the s")
+sum=0
+for i in s:
+   if i.isdigit():
+      sum+=int[i]
+print("total sum of string ",sum)     
 
