@@ -10,7 +10,7 @@ char="e"
 for i in string:
     if i in char:
         count=count+1
-print(count)
+print(count)  
 
 
 #Python Program to check if two Strings are Anagram.
