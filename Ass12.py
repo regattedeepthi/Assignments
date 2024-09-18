@@ -9,7 +9,29 @@ def convert(data):
             result.append(item)
     return tuple(result)
 data =((1,2),(3,4))
-print(convert(data))       
+print(convert(data))
+
+#another way
+
+nested_tuple = (1, (2, 3), (4, 5, 6))
+flattened_tuple = []
+for num in nested_tuple:
+    if isinstance(num,tuple):
+        flattened_tuple.extend(num)
+    else:
+        flattened_tuple.append(num)
+print (tuple(flattened_tuple))   
+
+nested_tuple = (1, (2, 3), (4, 5, 6))
+flattened_tuple = []
+for i in nested_tuple:
+     if isinstance(i, tuple):
+    
+       for j in i:
+        flattened_tuple.append(j)
+     else:
+        flattened_tuple.append(i)    
+print(tuple(flattened_tuple))
 
 
 
@@ -21,3 +43,14 @@ print(convert(data))
 students=(('vishnu',20),('Arvind',7),('John',15),('Ravi',32))
 students_list=sorted(list(students),key=lambda x:x[1])
 print(tuple(students_list))
+
+nested_tuple = (1, (2, 3), (4, 5, 6))
+flattened_tuple = []
+for i in nested_tuple:
+     if isinstance(i, tuple):
+    
+       for j in i:
+        flattened_tuple.append(j)
+     else:
+        flattened_tuple.append(i)    
+print(tuple(flattened_tuple))
