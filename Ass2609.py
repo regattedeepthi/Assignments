@@ -67,23 +67,28 @@ p4.display()
 
 class Company:
     Total_employees=0
-    def __init__(self):
-        self.employees={}
-    def employee_info(self,name,department):
-         self.employees[name] = department 
-         
-         Company.Total_employees+=1 #accessing static variable inside insatance method using class name
-         print("employee name: ",name, "Dept: ",department )
-
-emp=Company()
-emp.employee_info("Ravi","Developer")  
-emp.employee_info("Suresh","Tester")
-emp.employee_info("Mahesh","Software Executive") 
-emp.employee_info("Sangeetha","Developer") 
-print("Total Employees: ",Company.Total_employees)  #Here Total employees is static variable we have to access outside class using class name
+    def __init__(self,name,department):
+        self.name=name
+        self.department=department
+        Company.Total_employees+=1
+        print("Total employees in company ",Company.Total_employees)
+    def display_info(self):
+        return  self.name ,self.department
+emp1=Company("Mukesh","Developer")
+emp2=Company("Dinesh","Tester")
+emp3=Company("John","Execxutive")       
+print(emp1.display_info())
+print(emp2.display_info())
+print(emp3.display_info()) 
+#>Check whether changing the total_employees in one instance affects the others.
+emp1.Total_employees=+100
+print("Total employees in company ",Company.Total_employees)#does not affect as Total employees is taken as static variable
+   
+      
 
 #3.Create a class Rectangle that has instance variables length and width. 
- # Add a method calculate_area that calculates and prints the area of the rectangle using local variables inside the method.
+ # Add a method ca
+ # lculate_area that calculates and prints the area of the rectangle using local variables inside the method.
  # Exercise:
   #  >Create instances of the Rectangle class with different lengths and widths.
  #   >Calculate and print the area for each rectangle.
